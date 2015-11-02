@@ -19,6 +19,7 @@ Router.map(function() {
   this.route('list');
   this.route('list-controls');
   this.route('divider');
+  this.route('flex');
   this.route('sidenav');
   this.route('input');
   this.route('toolbar');

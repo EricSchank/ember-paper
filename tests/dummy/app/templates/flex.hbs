@@ -1,0 +1,254 @@
+{{#paper-toolbar}}
+    <div class="md-toolbar-tools">
+      {{#paper-sidenav-toggle as |toggle|}}
+        {{#paper-button target=toggle action="toggleMenu" icon-button=true}}{{paper-icon icon="menu"}}{{/paper-button}}
+      {{/paper-sidenav-toggle}}
+        <span class="md-breadcrumb-page">Flex</span>
+    </div>
+{{/paper-toolbar}}
+{{#paper-content class="md-padding"}}
+<div class="doc-content flex-demo">
+
+  <h2 class="md-headline">Layout Direction</h2>
+  <p>
+    For a flex container, you can specify whether it's contents should layout horizontally or vertically.
+  </p>
+
+  <h3>Horizontal Layout</h3>
+  <p>For horizontal layouts, specify <code>layout="row"</code> on the parent/container.</p>
+
+  <div layout="row" class="flex-border">
+    <div class="item-1 item" flex="33">Item 1</div>
+    <div class="item-2 item" flex="33">Item 2</div>
+    <div class="item-3 item" flex="33">Item 3</div>
+  </div>
+
+{{#code-block language='handlebars'}}
+&lt;div layout="row"&gt;
+  &lt;div flex="33"&gt;Item 1&lt;/div&gt;
+  &lt;div flex="33"&gt;Item 2&lt;/div&gt;
+  &lt;div flex="33"&gt;Item 3&lt;/div&gt;
+&lt;/div&gt;{{/code-block}}
+
+  <h3>Vertical Layout</h3>
+  <p>For vertical layouts, specify <code>layout="column"</code> on the parent/container.</p>
+
+  <div layout="column" class="flex-border">
+    <div class="item-1 item" flex="33">Item 1</div>
+    <div class="item-2 item" flex="33">Item 2</div>
+    <div class="item-3 item" flex="33">Item 3</div>
+  </div>
+
+{{#code-block language='handlebars'}}
+&lt;div layout="column"&gt;
+  &lt;div flex="33"&gt;Item 1&lt;/div&gt;
+  &lt;div flex="33"&gt;Item 2&lt;/div&gt;
+  &lt;div flex="33"&gt;Item 3&lt;/div&gt;
+&lt;/div&gt;{{/code-block}}
+
+<h2 class="md-headline">Child Size</h2>
+<p>
+  For a flex child, you can specify it's size using the <code>flex</code> attribute.
+</p>
+
+<blockquote>
+  Note: Only values in increments of "5" or "33" are allowed:
+  <ul layout="row" class="flex-values">
+    <li>
+      <ul layout="column">
+        <li>5</li>
+        <li>10</li>
+        <li>15</li>
+        <li>20</li>
+        <li>25</li>
+      </ul>
+    </li>
+    <li>
+      <ul layout="column">
+        <li>30</li>
+        <li><strong>33</strong></li>
+        <li>35</li>
+        <li>40</li>
+        <li>45</li>
+        <li>50</li>
+      </ul>
+    </li>
+    <li>
+      <ul layout="column">
+        <li>55</li>
+        <li>60</li>
+        <li>65</li>
+        <li><strong>66</strong></li>
+        <li>70</li>
+        <li>75</li>
+      </ul>
+    </li>
+    <li>
+      <ul layout="column">
+        <li>80</li>
+        <li>85</li>
+        <li>90</li>
+        <li>95</li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<div layout="row" class="flex-border">
+  <div class="item-1 item" flex="15">flex="15"</div>
+  <div class="item-2 item" flex="33">flex="33"</div>
+  <div class="item-3 item" flex="20">flex="20"</div>
+</div>
+
+{{#code-block language='handlebars'}}
+&lt;div layout="row"&gt;
+  &lt;div flex="15"&gt;flex="15"&lt;/div&gt;
+  &lt;div flex="33"&gt;flex="33"&lt;/div&gt;
+  &lt;div flex="20"&gt;flex="20"&lt;/div&gt;
+&lt;/div&gt;{{/code-block}}
+
+
+<h2 class="md-headline">Child Offset</h2>
+<p>
+  For a flex child, you can specify it's spacing using the <code>offset</code> attribute.
+</p>
+
+<blockquote>
+  Note: Only values in increments of "5" or "33" are allowed:
+  <ul layout="row" class="flex-values">
+    <li>
+      <ul layout="column">
+        <li>5</li>
+        <li>10</li>
+        <li>15</li>
+        <li>20</li>
+        <li>25</li>
+      </ul>
+    </li>
+    <li>
+      <ul layout="column">
+        <li>30</li>
+        <li><strong>33</strong></li>
+        <li>35</li>
+        <li>40</li>
+        <li>45</li>
+        <li>50</li>
+      </ul>
+    </li>
+    <li>
+      <ul layout="column">
+        <li>55</li>
+        <li>60</li>
+        <li>65</li>
+        <li><strong>66</strong></li>
+        <li>70</li>
+        <li>75</li>
+      </ul>
+    </li>
+    <li>
+      <ul layout="column">
+        <li>80</li>
+        <li>85</li>
+        <li>90</li>
+        <li>95</li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<div layout="row" class="flex-border">
+  <div class="item-1 item" flex="15" offset="5">flex="15"<br/>offset="5"</div>
+  <div class="item-2 item" flex="33" offset="10">flex="33"<br/>offset="10"</div>
+  <div class="item-3 item" flex="20" offset="5">flex="20"<br/>offset="5"</div>
+</div>
+
+{{#code-block language='handlebars'}}
+&lt;div layout="row"&gt;
+  &lt;div flex="15" offset="5"&gt;offset="5"&lt;/div&gt;
+  &lt;div flex="33" offset="10"&gt;offset="20"&lt;/div&gt;
+  &lt;div flex="20" offset="5"&gt;offset="5"&lt;/div&gt;
+&lt;/div&gt;{{/code-block}}
+
+<h2 class="md-headline">Child Alignment</h2>
+<p>
+  For a flex child, you can specify it's alignment using the <code>layout-align</code> attribute.
+</p>
+<blockquote>
+  Coming soon...
+</blockquote>
+
+<h2 class="md-headline">Child Order</h2>
+<p>
+  For a flex child, you can specify it's order using the <code>flex-order</code> attribute.
+</p>
+<blockquote>
+  Coming soon...
+</blockquote>
+
+<h2 class="md-headline">Screen Size Specific Options</h2>
+<h3>Hide</h3>
+<blockquote>
+  Coming soon...
+</blockquote>
+<h3>Small</h3>
+<blockquote>
+  Coming soon...
+</blockquote>
+<h3>Bigger Than Small</h3>
+<blockquote>
+  Coming soon...
+</blockquote>
+<h3>Medium</h3>
+<blockquote>
+  Coming soon...
+</blockquote>
+<h3>Bigger Than Medium</h3>
+<blockquote>
+  Coming soon...
+</blockquote>
+<h3>Large</h3>
+<blockquote>
+  Coming soon...
+</blockquote>
+<h3>Bigger Than Large</h3>
+<blockquote>
+  Coming soon...
+</blockquote>
+
+
+<h2 class="md-headline">Additional Styling Options</h2>
+<h3>Layout Padding</h3>
+<blockquote>
+  Coming soon...
+</blockquote>
+<h3>Layout Margin</h3>
+<blockquote>
+  Coming soon...
+</blockquote>
+<h3>Layout Fill</h3>
+<blockquote>
+  Coming soon...
+</blockquote>
+<h3>Layout Wrap</h3>
+<blockquote>
+  Coming soon...
+</blockquote>
+
+<h2 class="md-headline">Reference the Angular Material project</h2>
+<p>
+  Much of the <code>ember-paper</code> flex layout follows the patterns described in
+  <a href="https://material.angularjs.org/latest/layout/container">Angular Material's Layout reference</a>.
+</p>
+<p>
+  Be sure to also check out the <a href="https://material.angularjs.org/latest/layout/grid">Grid System</a>
+  , <a href="https://material.angularjs.org/latest/layout/alignment">Child Alignment</a>
+  , and <a href="https://material.angularjs.org/latest/layout/options">Options</a> sections for additional details and examples.
+</p>
+<p>
+  And of course, reading the <code>ember-paper</code> demo app
+  <a href="https://github.com/miguelcobain/ember-paper/tree/master/tests/dummy">source</a>
+  for uses of <code>flex</code> is always useful.
+</p>
+
+</div>
+{{/paper-content}}
